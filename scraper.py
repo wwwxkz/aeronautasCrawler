@@ -15,8 +15,9 @@ class Spider(scrapy.Spider):
         for post in response.css('article'):
             yield {
                 'titulo': string_cleaner(post.css('header h2 a ::text').extract_first().replace("\n\t\t\t\t", "")),
-                'conteudo': string_cleaner(post.css('section p ::text').extract_first()),
+                'conteudo': string_cleaner(post.css('section').get()),
                 'data': post.css('time::attr(datetime)').extract_first(),
+                'link': post.css('h2 a').extract_first(),
             }
         next_page = response.css('.pagination li a ::attr(href)').extract()
         next_page = next_page[len(next_page) - 2]
