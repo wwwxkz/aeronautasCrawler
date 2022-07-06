@@ -10,3 +10,4 @@ scrapy runspider scraper.py
 ```
 
 ![](https://github.com/wwwxkz/aeronautasCrawler/blob/main/README/aeronautas.png)
+![](https://github.com/wwwxkz/aeronautasCrawler/blob/main/README/csv.png)
